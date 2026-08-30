@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Streaming & YouTube Views Dashboard">
+  <title>STREAMING UPDATE • Fanbase Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">♪</div>
+      <div>
+        <div class="brand-title">STREAMING UPDATE</div>
+        <div class="brand-subtitle">Fanbase Dashboard</div>
+      </div>
+    </div>
+    <button class="refresh-btn" id="refreshBtn">↻ <span>Refresh</span></button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">REAL-TIME TRACKER</span>
+        <h1>Spotify & YouTube<br><span>Streaming Dashboard</span></h1>
+        <p>Monitor total streams, daily gains, targets, and video views dalam satu dashboard.</p>
+      </div>
+      <div class="last-update">
+        <span>LAST UPDATE</span>
+        <strong id="lastUpdate">—</strong>
+        <small>WIB</small>
+      </div>
+    </section>
+
+    <section class="summary-grid">
+      <article class="summary-card spotify">
+        <div class="summary-top"><span class="platform">♫ SPOTIFY</span><span class="pill">STREAMS</span></div>
+        <div class="summary-number" id="spotifyTotal">0</div>
+        <div class="summary-label">Total streams</div>
+        <div class="summary-gain">▲ <span id="spotifyDaily">0</span> today</div>
+      </article>
+
+      <article class="summary-card youtube">
+        <div class="summary-top"><span class="platform">▶ YOUTUBE</span><span class="pill">VIEWS</span></div>
+        <div class="summary-number" id="youtubeTotal">0</div>
+        <div class="summary-label">Total views</div>
+        <div class="summary-gain">▲ <span id="youtubeDaily">0</span> today</div>
+      </article>
+
+      <article class="summary-card target">
+        <div class="summary-top"><span class="platform">🎯 TARGET</span><span class="pill">MILESTONE</span></div>
+        <div class="summary-number" id="targetProgress">0%</div>
+        <div class="summary-label" id="targetLabel">Target 100M</div>
+        <div class="progress"><span id="targetBar"></span></div>
+      </article>
+    </section>
+
+    <section class="section-head">
+      <div>
+        <span class="eyebrow">TRACKING</span>
+        <h2>Featured Releases</h2>
+      </div>
+      <div class="filter-wrap">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="spotify">Spotify</button>
+        <button class="filter" data-filter="youtube">YouTube</button>
+      </div>
+    </section>
+
+    <section class="release-grid" id="releaseGrid"></section>
+
+    <section class="chart-card">
+      <div class="section-head compact">
+        <div>
+          <span class="eyebrow">HISTORY</span>
+          <h2>Daily Performance</h2>
+        </div>
+        <select id="chartSelect">
+          <option value="spotify">Spotify</option>
+          <option value="youtube">YouTube</option>
+        </select>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="chart"></canvas>
+      </div>
+    </section>
+
+    <section class="ranking-card">
+      <div class="section-head compact">
+        <div>
+          <span class="eyebrow">RANKING</span>
+          <h2>Top Releases</h2>
+        </div>
+      </div>
+      <div id="ranking"></div>
+    </section>
+
+    <footer>
+      <strong>STREAMING UPDATE</strong>
+      <span>Data tracker • Fan-made dashboard</span>
+      <span>© <span id="year"></span></span>
+    </footer>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
