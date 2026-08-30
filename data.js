@@ -27,7 +27,7 @@ const CONFIG = {
       artist: "TOMORROW X TOGETHER",
       cover: "",
       spotify: { total: 84796053, daily: 101377 },
-      youtube: { total: 0, daily: 0, videoId: "" }
+      youtube: { total: 39000000, daily: 0, videoId: "" }
     },
     {
       id: "see-you",
